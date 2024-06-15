@@ -7,7 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-//import { AuthService } from 'src/app/_services/auth.service';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -22,7 +22,7 @@ export class AuthPage implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    //private authService: AuthService
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -37,9 +37,27 @@ export class AuthPage implements OnInit {
   }
 
   login() {
-    return true;
+    console.log("los valores del formulario son:");
+    console.log(this.loginForm.value);
+    console.log("el formulario es valido?");
+    console.log(this.loginForm.valid);
+    console.log("los errores del formulario son:");
+    console.log(this.loginForm.errors);
+    if(this.loginForm.value.email === 'ignacio.mancilla@gmail.com') {
+      this.errorMessage = 'Usuario bloqueado';
+      return;
+    }
+    this.authService.login(this.loginForm.value).subscribe({
+      next: () => {
+        this.router.navigateByUrl('/receipt');
+      },
+      error: (result) => {
+        if (typeof result.error === 'string') {
+          this.errorMessage = result.error;
+        } else {
+          this.errorMessage = 'Intente nuevamente';
+        }
+      },
+    });
   }
-
-
-
 }
