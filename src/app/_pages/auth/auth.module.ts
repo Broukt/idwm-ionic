@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TextInputComponent } from 'src/app/_components/text-input/text-input.component';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -14,8 +15,8 @@ import { AuthPage } from './auth.page';
     FormsModule,
     IonicModule,
     AuthPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  declarations: [AuthPage]
+  declarations: [AuthPage, TextInputComponent]
 })
 export class AuthPageModule {}
