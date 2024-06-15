@@ -5,22 +5,25 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'auth',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'auth',
-    loadChildren: () => import('./_pages/auth/auth.module').then( m => m.AuthPageModule)
+    loadChildren: () =>
+      import('./_pages/auth/auth.module').then((m) => m.AuthPageModule),
   },
   {
     path: 'receipt',
-    loadChildren: () => import('./_pages/receipt/receipt.module').then( m => m.ReceiptPageModule)
-  }
-
+    loadChildren: () =>
+      import('./_pages/receipt/receipt.module').then(
+        (m) => m.ReceiptPageModule
+      ),
+  },
 ];
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

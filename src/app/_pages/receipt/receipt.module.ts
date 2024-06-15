@@ -9,12 +9,7 @@ import { ReceiptPageRoutingModule } from './receipt-routing.module';
 import { ReceiptPage } from './receipt.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    ReceiptPageRoutingModule
-  ],
-  declarations: [ReceiptPage]
+  imports: [CommonModule, FormsModule, IonicModule, ReceiptPageRoutingModule],
+  declarations: [ReceiptPage],
 })
 export class ReceiptPageModule {}

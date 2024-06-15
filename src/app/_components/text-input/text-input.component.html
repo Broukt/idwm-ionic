@@ -45,98 +45,65 @@
   />
 
   <p
-    style="
-      margin-top: 0.5rem;
-      font-size: 0.875rem;
-      color: #b83280;
-    "
+    style="margin-top: 0.5rem; font-size: 0.875rem; color: #b83280"
     *ngIf="control.errors?.['required'] && control.touched && control.invalid"
   >
-    <span style="font-weight: 500;">¡Error!</span> {{ requiredMessage }}
+    <span style="font-weight: 500">¡Error!</span> {{ requiredMessage }}
   </p>
 
   <!-- Repeat the above paragraph for each error message, replacing the ngIf condition and error text as needed -->
 
   <p
-    style="
-      margin-top: 0.5rem;
-      font-size: 0.875rem;
-      color: #b83280;
-    "
+    style="margin-top: 0.5rem; font-size: 0.875rem; color: #b83280"
     *ngIf="control.errors?.['invalidRut'] && control.touched && control.invalid"
   >
-    <span style="font-weight: 500;">¡Error!</span> El RUT es inválido
+    <span style="font-weight: 500">¡Error!</span> El RUT es inválido
   </p>
 
   <p
-    style="
-      margin-top: 0.5rem;
-      font-size: 0.875rem;
-      color: #b83280;
-    "
+    style="margin-top: 0.5rem; font-size: 0.875rem; color: #b83280"
     *ngIf="control.errors?.['minLenght'] && control.touched && control.invalid"
   >
-    <span style="font-weight: 500;">¡Error!</span> Debe tener al menos
+    <span style="font-weight: 500">¡Error!</span> Debe tener al menos
     {{ control.errors?.['minlength'].requiredLength }} caracteres
   </p>
 
   <p
-    style="
-      margin-top: 0.5rem;
-      font-size: 0.875rem;
-      color: #b83280;
-    "
+    style="margin-top: 0.5rem; font-size: 0.875rem; color: #b83280"
     *ngIf="control.errors?.['maxLenght'] && control.touched && control.invalid"
   >
-    <span style="font-weight: 500;">¡Error!</span> Debe tener como máximo
+    <span style="font-weight: 500">¡Error!</span> Debe tener como máximo
     {{ control.errors?.['maxlength'].requiredLength }} caracteres
   </p>
 
-
   <p
-    style="
-      margin-top: 0.5rem;
-      font-size: 0.875rem;
-      color: #b83280;
-    "
+    style="margin-top: 0.5rem; font-size: 0.875rem; color: #b83280"
     *ngIf="control.errors?.['noMatching'] && control.touched && control.invalid"
   >
-    <span style="font-weight: 500;">¡Error!</span> Las contraseñas deben ser iguales
+    <span style="font-weight: 500">¡Error!</span> Las contraseñas deben ser
+    iguales
   </p>
 
-
   <p
-    style="
-      margin-top: 0.5rem;
-      font-size: 0.875rem;
-      color: #b83280;
-    "
+    style="margin-top: 0.5rem; font-size: 0.875rem; color: #b83280"
     *ngIf="control.errors?.['invalidDateFormat'] && control.touched && control.invalid"
   >
-    <span style="font-weight: 500;">¡Error!</span> El formato de la fecha es inválido
+    <span style="font-weight: 500">¡Error!</span> El formato de la fecha es
+    inválido
   </p>
 
   <p
-    style="
-      margin-top: 0.5rem;
-      font-size: 0.875rem;
-      color: #b83280;
-    "
+    style="margin-top: 0.5rem; font-size: 0.875rem; color: #b83280"
     *ngIf="control.errors?.['futureDate'] && control.touched && control.invalid"
   >
-    <span style="font-weight: 500;">¡Error!</span> La fecha debe ser menor a la actual
+    <span style="font-weight: 500">¡Error!</span> La fecha debe ser menor a la
+    actual
   </p>
-
 
   <p
-    style="
-      margin-top: 0.5rem;
-      font-size: 0.875rem;
-      color: #b83280;
-    "
+    style="margin-top: 0.5rem; font-size: 0.875rem; color: #b83280"
     *ngIf="control.errors?.['email'] && control.touched && control.invalid"
   >
-    <span style="font-weight: 500;">¡Error!</span> Correo electrónico es inválido
+    <span style="font-weight: 500">¡Error!</span> Correo electrónico es inválido
   </p>
-
 </div>

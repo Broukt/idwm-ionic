@@ -58,25 +58,40 @@
 
           <div
             *ngIf="errorMessage"
-            style="padding: 1rem; font-size: 0.875rem; color: #991b1b; background-color: #fef2f2; border-radius: 0.375rem;"
+            style="
+              padding: 1rem;
+              font-size: 0.875rem;
+              color: #991b1b;
+              background-color: #fef2f2;
+              border-radius: 0.375rem;
+            "
             role="alert"
           >
             <span class="font-medium">Error!</span> {{ errorMessage }}
           </div>
 
           <button
-          style="width: fit-content; margin: auto; padding: 0.5rem 0.75rem; font-size: 0.875rem; font-weight: 500; text-align: center; color: #ffffff; background-color: #1e3a8a; border-radius: 0.375rem;"
-          [disabled]="!loginForm.valid"
-          [ngStyle]="
+            style="
+              width: fit-content;
+              margin: auto;
+              padding: 0.5rem 0.75rem;
+              font-size: 0.875rem;
+              font-weight: 500;
+              text-align: center;
+              color: #ffffff;
+              background-color: #1e3a8a;
+              border-radius: 0.375rem;
+            "
+            [disabled]="!loginForm.valid"
+            [ngStyle]="
           loginForm.valid
             ? { 'background-color': '#1e3a8a', 'cursor': 'pointer' }
             : { 'background-color': '#6366f1', 'cursor': 'not-allowed' }
           "
-          type="submit"
+            type="submit"
           >
             Ingresar
           </button>
-
         </form>
       </ion-card-content>
 

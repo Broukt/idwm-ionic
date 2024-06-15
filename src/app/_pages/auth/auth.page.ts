@@ -15,7 +15,6 @@ import { AuthService } from 'src/app/_services/auth.service';
   styleUrls: ['./auth.page.scss'],
 })
 export class AuthPage implements OnInit {
-
   loginForm: FormGroup = new FormGroup({});
   errorMessage: string = '';
 
@@ -37,13 +36,13 @@ export class AuthPage implements OnInit {
   }
 
   login() {
-    console.log("los valores del formulario son:");
+    console.log('los valores del formulario son:');
     console.log(this.loginForm.value);
-    console.log("el formulario es valido?");
+    console.log('el formulario es valido?');
     console.log(this.loginForm.valid);
-    console.log("los errores del formulario son:");
+    console.log('los errores del formulario son:');
     console.log(this.loginForm.errors);
-    if(this.loginForm.value.email === 'ignacio.mancilla@gmail.com') {
+    if (this.loginForm.value.email === 'ignacio.mancilla@gmail.com') {
       this.errorMessage = 'Usuario bloqueado';
       return;
     }
