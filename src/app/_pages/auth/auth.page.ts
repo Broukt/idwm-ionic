@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  ValidatorFn,
+  Validators,
+} from '@angular/forms';
+import { Router } from '@angular/router';
+//import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -7,9 +16,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthPage implements OnInit {
 
-  constructor() { }
+  loginForm: FormGroup = new FormGroup({});
+  errorMessage: string = '';
 
-  ngOnInit() {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    //private authService: AuthService
+  ) {}
+
+  ngOnInit(): void {
+    this.initializeForm();
   }
+
+  initializeForm(): void {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
+    });
+  }
+
+  login() {
+    return true;
+  }
+
+
 
 }
