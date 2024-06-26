@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { authGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
       import('./_pages/receipt/receipt.module').then(
         (m) => m.ReceiptPageModule
       ),
+    canActivate: [authGuard],
   },
 ];
 @NgModule({
