@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/_services/auth.service';
+import { ReceiptService } from 'src/app/_services/receipt.service';
 
 @Component({
   selector: 'app-auth',
@@ -21,7 +22,8 @@ export class AuthPage implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private receiptService: ReceiptService
   ) {}
 
   ngOnInit(): void {
@@ -42,21 +44,30 @@ export class AuthPage implements OnInit {
     console.log(this.loginForm.valid);
     console.log('los errores del formulario son:');
     console.log(this.loginForm.errors);
-    if (this.loginForm.value.email === 'ignacio.mancilla@gmail.com') {
-      this.errorMessage = 'Usuario bloqueado';
-      return;
-    }
     this.authService.login(this.loginForm.value).subscribe({
       next: () => {
         this.router.navigateByUrl('/receipt');
       },
       error: (result) => {
-        if (typeof result.error === 'string') {
+        console.log(result);
+        console.log(typeof result);
+        console.log(result.error);
+        console.log(typeof result.error);
+        console.log(result.message);
+        console.log(typeof result.message);
+
+        //Si el result es una http error response
+        if (result.status) {
           this.errorMessage = result.error;
-        } else {
-          this.errorMessage = 'Intente nuevamente';
+        } else if (typeof result.message === 'string') {
+          //Si el result es un error del service
+          this.errorMessage = result.message;
         }
       },
     });
+  }
+
+  isAdmin(token: string): boolean {
+    return token === 'admin';
   }
 }
