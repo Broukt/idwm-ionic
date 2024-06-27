@@ -12,17 +12,13 @@ export class AuthService {
   private currentAuthSource = new BehaviorSubject<Auth | null>(null);
   currentAuth$ = this.currentAuthSource.asObservable();
 
-  constructor(private http: HttpClient) {
-    console.log('AuthService. a ver q onda lol');
-  }
+  constructor(private http: HttpClient) {}
 
   login(model: any) {
-    console.log('a ver si esto se va en vola o no lol');
     return this.http.post<Auth>(`${this.baseUrl}/auth/login`, model).pipe(
       map((auth: Auth) => {
         if (auth) {
           if (auth.user.role.type == 'Admin') {
-            console.log('es admin');
             throw new Error('No tienes permisos para acceder a esta página');
           }
 
@@ -40,6 +36,5 @@ export class AuthService {
   setCurrentAuth(auth: Auth) {
     localStorage.setItem('auth', JSON.stringify(auth));
     this.currentAuthSource.next(auth);
-    console.log('una vez wn');
   }
 }

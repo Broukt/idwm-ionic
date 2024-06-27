@@ -18,7 +18,6 @@ export class ReceiptService {
   getPurchases() {
     let sub = this.authService.currentAuth$.subscribe((auth) => {
       if (!auth) {
-        console.log('No hay auth');
         //go back to previous screen
         return;
       }
@@ -31,8 +30,6 @@ export class ReceiptService {
       this.http
         .get<Purchase[]>(`${this.baseUrl}/user/${id}/purchases`, { headers })
         .subscribe((purchases) => {
-          console.log('purchases');
-          console.log(purchases);
           if (purchases) {
             this.currentPurchaseSource.next(purchases);
           }

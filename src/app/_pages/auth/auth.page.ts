@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  AbstractControl,
-  FormBuilder,
-  FormGroup,
-  ValidatorFn,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/_services/auth.service';
 import { ReceiptService } from 'src/app/_services/receipt.service';
@@ -22,8 +16,7 @@ export class AuthPage implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private authService: AuthService,
-    private receiptService: ReceiptService
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -38,24 +31,11 @@ export class AuthPage implements OnInit {
   }
 
   login() {
-    console.log('los valores del formulario son:');
-    console.log(this.loginForm.value);
-    console.log('el formulario es valido?');
-    console.log(this.loginForm.valid);
-    console.log('los errores del formulario son:');
-    console.log(this.loginForm.errors);
     this.authService.login(this.loginForm.value).subscribe({
       next: () => {
         this.router.navigateByUrl('/receipt');
       },
       error: (result) => {
-        console.log(result);
-        console.log(typeof result);
-        console.log(result.error);
-        console.log(typeof result.error);
-        console.log(result.message);
-        console.log(typeof result.message);
-
         //Si el result es una http error response
         if (result.status) {
           this.errorMessage = result.error;
@@ -65,9 +45,5 @@ export class AuthPage implements OnInit {
         }
       },
     });
-  }
-
-  isAdmin(token: string): boolean {
-    return token === 'admin';
   }
 }
