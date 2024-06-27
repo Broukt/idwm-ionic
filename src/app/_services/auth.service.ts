@@ -32,6 +32,11 @@ export class AuthService {
     );
   }
 
+  logout() {
+    localStorage.removeItem('auth');
+    this.currentAuthSource.next(null);
+  }
+
   setCurrentAuth(auth: Auth) {
     localStorage.setItem('auth', JSON.stringify(auth));
     this.currentAuthSource.next(auth);
