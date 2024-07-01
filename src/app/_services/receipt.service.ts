@@ -8,6 +8,9 @@ import { AuthService } from './auth.service';
 @Injectable({
   providedIn: 'root',
 })
+/**
+ * Service for managing receipts.
+ */
 export class ReceiptService {
   baseUrl: string = environment.apiUrl;
   private currentPurchaseSource = new BehaviorSubject<Purchase[] | null>(null);
@@ -15,6 +18,9 @@ export class ReceiptService {
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
+  /**
+   * Retrieves the purchases for the authenticated user.
+   */
   getPurchases() {
     let sub = this.authService.currentAuth$.subscribe((auth) => {
       if (!auth) {

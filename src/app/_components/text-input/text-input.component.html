@@ -1,3 +1,33 @@
+<!--
+  This is the template for the text input component.
+  It displays a label, an input field, and error messages based on the validation rules.
+
+  Inputs:
+  - label: The label for the input field.
+  - type: The type of the input field (e.g., text, password, email).
+  - placeholder: The placeholder text for the input field.
+  - control: The form control associated with the input field.
+
+  Validation Rules:
+  - required: The input field is required.
+  - invalidRut: The input field contains an invalid RUT (Chilean identification number).
+  - minlength: The input field must have a minimum length.
+  - maxlength: The input field must have a maximum length.
+  - noMatching: The input field does not match another input field (e.g., password confirmation).
+  - invalidDateFormat: The input field contains an invalid date format.
+  - futureDate: The input field contains a date that is in the future.
+  - email: The input field contains an invalid email address.
+
+  Error Messages:
+  - requiredMessage: The error message to display when the input field is required.
+  - minlength: The error message to display when the input field does not meet the minimum length requirement.
+  - maxlength: The error message to display when the input field exceeds the maximum length requirement.
+  - invalidRut: The error message to display when the input field contains an invalid RUT.
+  - noMatching: The error message to display when the input field does not match another input field.
+  - invalidDateFormat: The error message to display when the input field contains an invalid date format.
+  - futureDate: The error message to display when the input field contains a date in the future.
+  - email: The error message to display when the input field contains an invalid email address.
+-->
 <div
   style="
     display: flex;

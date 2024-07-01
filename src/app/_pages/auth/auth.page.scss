@@ -1,3 +1,7 @@
+/**
+ * Styles for the authentication page.
+ */
+
 .center-content {
   display: flex;
   justify-content: center;
@@ -5,6 +9,9 @@
   height: 100%;
 }
 
+/**
+ * Styles for the alert component.
+ */
 .alert {
   padding: 1rem;
   font-size: 0.875rem;
@@ -13,6 +20,9 @@
   border-radius: 0.375rem;
 }
 
+/**
+ * Styles for the button component.
+ */
 .button {
   align-self: flex-end;
   width: fit-content;
@@ -26,15 +36,24 @@
   border-radius: 0.375rem;
 }
 
+/**
+ * Styles for the button component when hovered.
+ */
 .button:hover {
   background-color: #1e40af;
 }
 
+/**
+ * Styles for the button component when focused.
+ */
 .button:focus {
   outline: none;
   box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.5);
 }
 
+/**
+ * Styles for the disabled button component.
+ */
 .button:disabled {
   background-color: #6366f1;
   cursor: not-allowed;

@@ -1,9 +1,6 @@
 <!--
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>AAAuth</ion-title>
-  </ion-toolbar>
-</ion-header>
+  This HTML template represents the authentication page of the app.
+  It contains a login form where users can enter their email and password to log in.
 -->
 
 <ion-content
@@ -39,6 +36,7 @@
           (ngSubmit)="loginForm.valid && login()"
           autocomplete="off"
         >
+          <!-- Input field for email -->
           <app-text-input
             [type]="'email'"
             [formControl]="$any(loginForm.controls['email'])"
@@ -47,6 +45,7 @@
             requiredMessage="El correo es requerido"
           ></app-text-input>
 
+          <!-- Input field for password -->
           <app-text-input
             [type]="'password'"
             [formControl]="$any(loginForm.controls['password'])"
@@ -56,6 +55,7 @@
             style="margin-top: 10px; margin-bottom: 10px"
           ></app-text-input>
 
+          <!-- Error message display -->
           <div
             *ngIf="errorMessage"
             style="
@@ -73,6 +73,7 @@
             {{ errorMessage }}
           </div>
 
+          <!-- Login button -->
           <button
             style="
               width: fit-content;
@@ -88,10 +89,10 @@
             "
             [disabled]="!loginForm.valid"
             [ngStyle]="
-          loginForm.valid
-            ? { 'background-color': '#1e3a8a', 'cursor': 'pointer' }
-            : { 'background-color': '#6366f1', 'cursor': 'not-allowed' }
-          "
+              loginForm.valid
+                ? { 'background-color': '#1e3a8a', 'cursor': 'pointer' }
+                : { 'background-color': '#6366f1', 'cursor': 'not-allowed' }
+            "
             type="submit"
           >
             Ingresar

@@ -10,6 +10,11 @@ import { ReceiptPageRoutingModule } from './receipt-routing.module';
 
 import { ReceiptPage } from './receipt.page';
 
+/**
+ * NgModule decorator for the ReceiptPageModule.
+ *
+ * This module is responsible for importing the necessary dependencies and declaring the components used in the ReceiptPage.
+ */
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, ReceiptPageRoutingModule],
   declarations: [ReceiptPage, ReceiptListItemComponent, TabsComponent],

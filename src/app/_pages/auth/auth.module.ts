@@ -9,6 +9,10 @@ import { AuthPageRoutingModule } from './auth-routing.module';
 
 import { AuthPage } from './auth.page';
 
+/**
+ * The AuthPageModule is responsible for importing the necessary modules and declaring the components
+ * required for the authentication page.
+ */
 @NgModule({
   imports: [
     CommonModule,

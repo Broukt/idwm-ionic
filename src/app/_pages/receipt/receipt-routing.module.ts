@@ -10,6 +10,10 @@ const routes: Routes = [
   },
 ];
 
+/**
+ * The routing module for the Receipt page.
+ * This module is responsible for importing and exporting the necessary routing configuration for the Receipt page.
+ */
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],

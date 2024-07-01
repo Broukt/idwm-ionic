@@ -1,4 +1,11 @@
+<!--
+  This HTML file represents the receipt page of the application.
+  It displays a list of purchases with their details, such as product name, type, purchase date, unit price, quantity, and total price.
+  The page also includes a title and a set of tabs at the bottom.
+-->
+
 <ion-content [fullscreen]="true" class="content">
+  <!-- The title of the page -->
   <ion-title
     size="large"
     class="content-title"
@@ -6,9 +13,11 @@
     >Receipt</ion-title
   >
 
+  <!-- The list of purchases -->
   <ion-list class="list">
     <ion-item *ngFor="let purchase of purchases" class="list-item">
       <div class="item-detail">
+        <!-- Custom component to display the details of each purchase -->
         <app-receipt-list-item
           [productName]="purchase.productName"
           [productType]="purchase.productType"
@@ -22,4 +31,5 @@
   </ion-list>
 </ion-content>
 
+<!-- The tabs component -->
 <app-tabs></app-tabs>
