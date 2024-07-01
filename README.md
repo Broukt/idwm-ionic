@@ -14,7 +14,7 @@ jairo.calcina@alumnos.ucn.cl
 Para comenzar:
 
 1. Clona el repositorio: `git clone https://github.com/Broukt/idwm-ionic.git`
-2. Navega al directorio del proyecto: `cd your-repo`
+2. Navega al directorio del proyecto: `cd idwm-ionic`
 3. Instala las dependencias: `npm install`
 
 ## Uso
